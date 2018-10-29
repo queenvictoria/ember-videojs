@@ -5,7 +5,7 @@ module.exports = {
 
   afterInstall() {
     return this.addPackagesToProject([
-      {name: 'video.js'},
+      { name: 'video.js' },
     ]);
   }
 };
