@@ -13,6 +13,8 @@ module.exports = {
     app.import({
       development: path.join(videojsDirectory, 'video-js.css'),
       production:  path.join(videojsDirectory, 'video-js.min.css')
+    }, {
+      'video.js': ['videojs']
     });
 
     // app.import(path.join(videojsDirectory, 'font/VideoJS.eot'), { destDir: 'assets/font' });
@@ -24,6 +26,25 @@ module.exports = {
       development: path.join(videojsDirectory, 'video.js'),
       production: path.join(videojsDirectory, 'video.min.js'),
     });
+  },
+
+
+  treeForVendor: function(vendorTree){
+    var videojsPath = path.dirname(require.resolve('video.js'));
+
+    var trees = [];
+    if(vendorTree){
+      trees.push(vendorTree);
+    }
+
+    var videojsTree = new Funnel(videojsPath, {
+      srcDir: '/',
+      destDir: 'videojs',
+    });
+
+    trees.push(videojsTree);
+
+    return new MergeTrees(trees, { overwrite: true });
   },
 
   isDevelopingAddon() {
