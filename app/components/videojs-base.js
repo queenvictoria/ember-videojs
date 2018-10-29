@@ -1,0 +1,1 @@
+export { default } from 'ember-videojs/components/videojs-base';
