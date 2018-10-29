@@ -1,7 +1,7 @@
 ember-videojs
 ==============================================================================
 
-Use the (VideoJS)[https://videojs.com/] player in your Ember project
+Use [VideoJS](https://videojs.com/) HTML5 video player components in your Ember project.
 
 Installation
 ------------------------------------------------------------------------------
@@ -37,21 +37,31 @@ this.set("sources", [
 ]);
 ```
 
-(VideoJS documentation)[https://docs.videojs.com/]
+[VideoJS documentation](https://docs.videojs.com/)
 
 ### Controls
 
+- `controls`: true\|false
+
+```handlebars
+{{video-js controls=true}}
+```
+
 ### Autoplay
 
+- `autoplay`: true\|false
 
+```handlebars
+{{video-js autoplay=true}}
+```
 
 ### 360 videos and VR
 
-Install the (videojs-vr)[https://github.com/videojs/videojs-vr#installation] plugin
+Install the [videojs-vr](https://github.com/videojs/videojs-vr#installation) plugin
 
 - `npm install --save videojs-vr`
 
-Add the (vr-projection)[https://github.com/videojs/videojs-vr#projection] attribute to your component
+Add the [vr-projection](https://github.com/videojs/videojs-vr#projection) attribute to your component
 
 - `vr-projection`: '360', 'Sphere', or 'equirectangular'
 
