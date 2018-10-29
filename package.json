@@ -11,9 +11,12 @@
     "html5",
     "player"
   ],
-  "repository": "",
+  "repository": "https://github.com/queenvictoria/ember-paperjs",
   "license": "MIT",
-  "author": "",
+  "author": {
+    "name": "Snow",
+    "email": "snow@hollysydney.com"
+  },
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -54,6 +57,7 @@
     "eslint-plugin-node": "^6.0.1",
     "loader.js": "^4.2.3",
     "qunit-dom": "^0.6.2",
+    "video.js": "^7.2.4",
     "videojs-vr": "^1.5.0"
   },
   "engines": {
