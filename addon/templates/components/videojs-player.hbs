@@ -14,12 +14,12 @@
   {{/if}}
 
   {{#if textTrack}}
-  <track kind="captions" src="{{textTrack}}" srclang="en" label="English" default>
+  <track kind="captions" src="{{textTrack}}" srclang="en" label="English" type="text/vtt" default>
   {{/if}}
 
   {{#if textTracks}}
   {{#each textTracks as |textTrack|}}
-  <track kind="{{textTrack.kind}}" src="{{textTrack.src}}" srclang="{{textTrack.language}}" label="{{textTrack.label}}" default>
+  <track kind="{{textTrack.kind}}" src="{{textTrack.src}}" srclang="{{textTrack.language}}" label="{{textTrack.label}}" type="{{textTrack.type}}" default>
   {{/each}}
   {{/if}}
 

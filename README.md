@@ -95,7 +95,15 @@ this.set("textTracks", [
     kind: "captions",
     label: "Maori",
     language: "mi",
-    src="captions-mi.vtt"
+    src="captions-mi.vtt",
+    type="text/vtt"
+  },
+  {
+    kind: "captions",
+    label: "English",
+    language: "en",
+    src="captions-en.vtt",
+    type="text/vtt"
   }
 ]);
 ```
