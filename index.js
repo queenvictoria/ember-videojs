@@ -1,4 +1,6 @@
 'use strict';
+const Funnel = require('broccoli-funnel');
+const MergeTrees = require('broccoli-merge-trees');
 const path = require('path');
 
 module.exports = {
