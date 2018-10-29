@@ -1,6 +1,6 @@
 import Component from '@ember/component';
 import layout from '../templates/components/videojs-base';
-import videojs from 'video.js';
+import videojs from 'videojs';
 
 export default Component.extend({
   layout,
