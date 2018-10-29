@@ -6,6 +6,10 @@ export default Component.extend({
   layout,
   player: null,
 
+  // Defaults
+  controls: true,
+  autoplay: false,
+
   didInsertElement() {
     this._super(...arguments);
 

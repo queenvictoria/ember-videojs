@@ -14,12 +14,36 @@ ember install ember-videojs
 Usage
 ------------------------------------------------------------------------------
 
-
-```
+```handlebars
 {{videojs-player src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" poster="https://vjs.zencdn.net/v/oceans.png"}}
 ```
 
+### Add multiple sources.
+
+```handlebars
+{{video-js sources=sources}}
+```
+
+```javascript
+this.set("sources", [
+  {
+    type: "video/mp4",
+    src="https://vjs.zencdn.net/v/oceans.mp4"
+  },
+  {
+    type: "video/webm",
+    src="https://vjs.zencdn.net/v/oceans.webm"
+  },
+]);
+```
+
 (VideoJS documentation)[https://docs.videojs.com/]
+
+### Controls
+
+### Autoplay
+
+
 
 ### 360 videos and VR
 
@@ -31,8 +55,40 @@ Add the (vr-projection)[https://github.com/videojs/videojs-vr#projection] attrib
 
 - `vr-projection`: '360', 'Sphere', or 'equirectangular'
 
+```handlebars
+{{video-js vrProjection="360"}}
+```
 
+### Skinning
 
+TBD
+
+### Closed captions and subtitles
+
+Add a text track to your video in the `WebVTT` format.
+
+- `text-track`: [track URL]
+
+```handlebars
+{{video-js textTrack="captions-mi.vtt"}}
+```
+
+Add multiple tracks or configure the text track options in your component.
+
+```handlebars
+{{video-js textTracks=textTracks}}
+```
+
+```javascript
+this.set("textTracks", [
+  {
+    kind: "captions",
+    label: "Maori",
+    language: "mi",
+    src="captions-mi.vtt"
+  }
+]);
+```
 
 Contributing
 ------------------------------------------------------------------------------

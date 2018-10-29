@@ -2,8 +2,27 @@
 <li>{{type}}</li>
 <li>{{poster}}</li>
 
-<video class="video-js" controls preload="auto" width="640" height="264" poster="{{poster}}" data-setup="{}" crossorigin="{{vr-crossorigin}}">
+<video class="video-js" controls={{controls}} autoplay={{autoplay}} preload="auto" width="640" height="264" poster="{{poster}}" data-setup="{}" crossorigin="{{vr-crossorigin}}">
+  {{#if src}}
   <source src="{{src}}" type="{{type}}">
+  {{/if}}
+
+  {{#if sources}}
+  {{#each sources as |source|}}
+  <source src="{{source.src}}" type="{{source.type}}">
+  {{/each}}
+  {{/if}}
+
+  {{#if textTrack}}
+  <track kind="captions" src="{{textTrack}}" srclang="en" label="English" default>
+  {{/if}}
+
+  {{#if textTracks}}
+  {{#each textTracks as |textTrack|}}
+  <track kind="{{textTrack.kind}}" src="{{textTrack.src}}" srclang="{{textTrack.language}}" label="{{textTrack.label}}" default>
+  {{/each}}
+  {{/if}}
+
   <p class="vjs-no-js">
     To view this video please enable JavaScript, and consider upgrading to a web browser that
     <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
