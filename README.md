@@ -1,7 +1,7 @@
 ember-videojs
 ==============================================================================
 
-[Short description of the addon.]
+Use the (VideoJS)[https://videojs.com/] player in your Ember project
 
 Installation
 ------------------------------------------------------------------------------
@@ -14,7 +14,24 @@ ember install ember-videojs
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+
+```
+{{videojs-player src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" poster="https://vjs.zencdn.net/v/oceans.png"}}
+```
+
+(VideoJS documentation)[https://docs.videojs.com/]
+
+### 360 videos and VR
+
+Install the (videojs-vr)[https://github.com/videojs/videojs-vr#installation] plugin
+
+- `npm install --save videojs-vr`
+
+Add the (vr-projection)[https://github.com/videojs/videojs-vr#projection] attribute to your component
+
+- `vr-projection`: '360', 'Sphere', or 'equirectangular'
+
+
 
 
 Contributing

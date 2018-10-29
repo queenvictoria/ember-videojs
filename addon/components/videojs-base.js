@@ -14,7 +14,10 @@ export default Component.extend({
 
     // Register plugins
     // Get global plugins from config.
-    player.vr({projection: '360'});
+    if ( this.get("vr-projection") ) {
+      this.set("vr-crossorigin", "anonymous");
+      player.vr({projection: this.get("vr-projection")});
+    }
 
     this.set("player", player);
   },
