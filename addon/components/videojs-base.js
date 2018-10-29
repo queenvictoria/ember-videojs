@@ -7,13 +7,14 @@ export default Component.extend({
   player: null,
 
   // Defaults
-  controls: true,
   autoplay: false,
+  controls: true,
+  loop: false,
 
   didInsertElement() {
     this._super(...arguments);
 
-    const element = this.$().find("video")[0];
+    const element = this.$().find("video").get(0);
     const player = videojs(element);
 
     // Register plugins
