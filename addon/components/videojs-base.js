@@ -9,13 +9,28 @@ export default Component.extend({
   // Defaults
   autoplay: false,
   controls: true,
+  fluid: false,
   loop: false,
+  height: null,
+  width: null,
 
   didInsertElement() {
     this._super(...arguments);
 
     const element = this.$().find("video").get(0);
     const player = videojs(element);
+
+    if ( this.get("height") ) {
+      player.height(this.get("height"));
+    }
+
+    if ( this.get("width") ) {
+      player.width(this.get("width"));
+    }
+
+    if ( this.get("fluid") ) {
+      player.fluid(this.get("fluid"));
+    }
 
     // Register plugins
     // Get global plugins from config.

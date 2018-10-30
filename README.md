@@ -39,6 +39,14 @@ this.set("sources", [
 
 [VideoJS documentation](https://docs.videojs.com/)
 
+### Autoplay
+
+- `autoplay`: true\|false
+
+```handlebars
+{{video-js autoplay=true}}
+```
+
 ### Controls
 
 - `controls`: true\|false
@@ -47,12 +55,15 @@ this.set("sources", [
 {{video-js controls=true}}
 ```
 
-### Autoplay
+### Sizing
 
-- `autoplay`: true\|false
+- `width`: an integer in pixels (VideoJS doesn't support CSS style sizing)
+- `height`: an integer in pixels (VideoJS doesn't support CSS style sizing)
+- `fluid`: adds the .vjs-fluid class and will scale to fit the container and content.
 
 ```handlebars
-{{video-js autoplay=true}}
+{{video-js width=640 height=320}}
+{{video-js fluid=true}}
 ```
 
 ### 360 videos and VR
