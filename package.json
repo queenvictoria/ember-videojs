@@ -1,7 +1,7 @@
 {
   "name": "ember-videojs",
   "version": "0.0.13",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Use VideoJS components in your Ember project.",
   "keywords": [
     "ember-addon",
     "videojs",
@@ -11,7 +11,7 @@
     "html5",
     "player"
   ],
-  "repository": "https://github.com/queenvictoria/ember-paperjs",
+  "repository": "https://github.com/queenvictoria/ember-videojs",
   "license": "MIT",
   "author": {
     "name": "Snow",
@@ -45,7 +45,6 @@
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^2.0.0",
-    "ember-cli-videojs-shim": "^0.1.1",
     "ember-disable-prototype-extensions": "^1.1.2",
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.1.0",
@@ -57,8 +56,7 @@
     "eslint-plugin-ember": "^5.0.0",
     "eslint-plugin-node": "^6.0.1",
     "loader.js": "^4.2.3",
-    "qunit-dom": "^0.6.2",
-    "videojs-vr": "^1.5.0"
+    "qunit-dom": "^0.6.2"
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"

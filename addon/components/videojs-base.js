@@ -1,7 +1,6 @@
 import Component from '@ember/component';
 import layout from '../templates/components/videojs-base';
 import videojs from 'videojs';
-// import videojsvr from 'videojs-vr';
 
 export default Component.extend({
   layout,
@@ -25,7 +24,7 @@ export default Component.extend({
         this.set("vr-crossorigin", "anonymous");
         player.vr({projection: this.get("vr-projection")});
       } else {
-        console.error("It looks like you are trying to play a VR video without the videojs-vr library. Please ember install ember-videojs-vr-shim.");
+        console.error("It looks like you are trying to play a VR video without the videojs-vr library. Please ember install ember-cli-videojs-vr-shim.");
       }
     }
 
