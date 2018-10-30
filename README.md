@@ -89,7 +89,41 @@ Add the [vr-projection](https://github.com/videojs/videojs-vr#projection) attrib
 
 ### Skinning
 
-TBD
+VideoJS doesn't provide a way to interact with it's styles. Just override them in your `styles.css`.
+
+```CSS
+  .video-js .vjs-big-play-button {};
+  .video-js .vjs-big-vr-play-button {};
+
+  .video-js .vjs-control-bar {};
+  .vjs-has-started .vjs-control-bar {};
+
+  .video-js .vjs-control {};
+  .vjs-icon-play:before, .video-js .vjs-big-play-button .vjs-icon-placeholder:before, .video-js .vjs-play-control .vjs-icon-placeholder:before {};
+
+  .vjs-icon-play:before, .video-js .vjs-big-play-button .vjs-icon-placeholder:before, .video-js .vjs-play-control .vjs-icon-placeholder:before {};
+
+  .video-js .vjs-volume-panel {};
+
+  .video-js .vjs-mute-control {};
+  .vjs-icon-volume-high:before, .video-js .vjs-mute-control .vjs-icon-placeholder:before {};
+
+  .video-js .vjs-progress-control {};
+
+  .video-js .vjs-progress-holder .vjs-play-progress, .video-js .vjs-progress-holder .vjs-load-progress, .video-js .vjs-progress-holder .vjs-load-progress div {};
+
+  .video-js .vjs-time-control {};
+
+  .video-js .vjs-fullscreen-control {};
+  .vjs-icon-fullscreen-enter:before, .video-js .vjs-fullscreen-control .vjs-icon-placeholder:before {};
+
+  .vjs-icon-subtitles, .video-js .vjs-subtitles-button .vjs-icon-placeholder, .video-js .vjs-subs-caps-button .vjs-icon-placeholder, .video-js.video-js:lang(en-GB) .vjs-subs-caps-button .vjs-icon-placeholder, .video-js.video-js:lang(en-IE) .vjs-subs-caps-button .vjs-icon-placeholder, .video-js.video-js:lang(en-AU) .vjs-subs-caps-button .vjs-icon-placeholder, .video-js.video-js:lang(en-NZ) .vjs-subs-caps-button .vjs-icon-placeholder {};
+
+  .vjs-icon-subtitles:before, .video-js .vjs-subtitles-button .vjs-icon-placeholder:before, .video-js .vjs-subs-caps-button .vjs-icon-placeholder:before, .video-js.video-js:lang(en-GB) .vjs-subs-caps-button .vjs-icon-placeholder:before, .video-js.video-js:lang(en-IE) .vjs-subs-caps-button .vjs-icon-placeholder:before, .video-js.video-js:lang(en-AU) .vjs-subs-caps-button .vjs-icon-placeholder:before, .video-js.video-js:lang(en-NZ) .vjs-subs-caps-button .vjs-icon-placeholder:before {};
+
+  /* Uses inline styles on the grandchild */
+  .vjs-text-track-display {};
+```
 
 ### Closed captions and subtitles
 
