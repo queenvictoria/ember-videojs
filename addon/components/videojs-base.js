@@ -24,7 +24,7 @@ export default Component.extend({
         this.set("vr-crossorigin", "anonymous");
         player.vr({projection: this.get("vr-projection")});
       } else {
-        console.error("It looks like you are trying to play a VR video without the videojs-vr library. Please ember install ember-cli-videojs-vr-shim.");
+        console.error("It looks like you are trying to play a VR video without the videojs-vr library. Please `npm install --save-dev videojs-vr` and add `app.import('node_modules/videojs-vr/dist/videojs-vr.min.js');` to your ember-cli-build.js file.");
       }
     }
 

@@ -61,6 +61,13 @@ Install the [videojs-vr](https://github.com/videojs/videojs-vr#installation) plu
 
 - `npm install --save videojs-vr`
 
+Add the import statement to your ember-cli-build.js file.
+
+```
+app.import('node_modules/videojs-vr/dist/videojs-vr.min.js');
+app.import('node_modules/videojs-vr/dist/videojs-vr.min.js');
+```
+
 Add the [vr-projection](https://github.com/videojs/videojs-vr#projection) attribute to your component
 
 - `vr-projection`: '360', 'Sphere', or 'equirectangular'
