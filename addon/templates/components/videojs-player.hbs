@@ -1,26 +1,26 @@
 <video class="video-js" controls={{controls}} autoplay={{autoplay}} preload="auto" poster="{{poster}}" data-setup="{}" crossorigin="{{vr-crossorigin}}">
   {{#if src}}
-  <source src="{{src}}" type="{{type}}">
+    <source src="{{src}}" type="{{type}}">
   {{/if}}
 
   {{#if sources}}
-  {{#each sources as |source|}}
-  <source src="{{source.src}}" type="{{source.type}}">
-  {{/each}}
+    {{#each sources as |source|}}
+      <source src="{{source.src}}" type="{{source.type}}">
+    {{/each}}
   {{/if}}
 
   {{#if textTrack}}
-  <track kind="captions" src="{{textTrack}}" srclang="en" label="English" type="text/vtt" default>
+    <track kind="captions" src="{{textTrack}}" srclang="en" label="English" type="text/vtt" default>
   {{/if}}
 
   {{#if textTracks}}
-  {{#each textTracks as |textTrack|}}
-  <track kind="{{textTrack.kind}}" src="{{textTrack.src}}" srclang="{{textTrack.language}}" label="{{textTrack.label}}" type="{{textTrack.type}}" default>
-  {{/each}}
+    {{#each textTracks as |textTrack|}}
+      <track kind="{{textTrack.kind}}" src="{{textTrack.src}}" srclang="{{textTrack.language}}" label="{{textTrack.label}}" type="{{textTrack.type}}" default>
+    {{/each}}
   {{/if}}
 
   <p class="vjs-no-js">
     To view this video please enable JavaScript, and consider upgrading to a web browser that
-    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    <a href="https://videojs.com/html5-video-support/" target="_blank" rel="noopener">supports HTML5 video</a>
   </p>
 </video>
