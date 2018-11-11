@@ -150,7 +150,7 @@ VideoJS doesn't provide a way to interact with it's styles. Just override them i
 
 Add a text track to your video in the `WebVTT` format.
 
-- `text-track`: [track URL]
+- `textTrack`: [track URL]
 
 ```handlebars
 {{video-js textTrack="captions-mi.vtt"}}
