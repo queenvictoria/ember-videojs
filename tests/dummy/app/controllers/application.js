@@ -10,4 +10,22 @@ export default Controller.extend({
     ];
   },
 
+  actions: {
+    progress: function(e) {
+      console.log("progress");
+    },
+
+    ready: function() {
+      console.log("ready");
+    },
+
+    togglePlay: function(player) {
+      if (player.paused()) {
+        player.play();
+      } else {
+        player.pause();
+      }
+    },
+  }
+
 });

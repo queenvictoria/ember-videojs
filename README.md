@@ -55,6 +55,27 @@ this.set("sources", [
 {{video-js controls=true}}
 ```
 
+#### Click to play without controls
+
+```handlebars
+{{!-- app/templates/components/player.hbs}}
+{{video-js controls=false click="togglePlay"}}
+```
+
+``` javascript
+// app/components/player.js
+
+actions: {
+  togglePlay: function(player) {
+    if (player.paused()) {
+      player.play();
+    } else {
+      player.pause();
+    }
+  }
+}
+```
+
 ### Sizing
 
 - `width`: an integer in pixels (VideoJS doesn't support CSS style sizing)
