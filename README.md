@@ -55,6 +55,27 @@ this.set("sources", [
 {{video-js controls=true}}
 ```
 
+#### Click to play without controls
+
+```handlebars
+{{!-- app/templates/components/player.hbs}}
+{{video-js controls=false click="togglePlay"}}
+```
+
+``` javascript
+// app/components/player.js
+
+actions: {
+  togglePlay: function(player) {
+    if (player.paused()) {
+      player.play();
+    } else {
+      player.pause();
+    }
+  }
+}
+```
+
 ### Sizing
 
 - `width`: an integer in pixels (VideoJS doesn't support CSS style sizing)
@@ -129,7 +150,7 @@ VideoJS doesn't provide a way to interact with it's styles. Just override them i
 
 Add a text track to your video in the `WebVTT` format.
 
-- `text-track`: [track URL]
+- `textTrack`: [track URL]
 
 ```handlebars
 {{video-js textTrack="captions-mi.vtt"}}
