@@ -72,30 +72,28 @@ export default Component.extend({
     tap: 'tap',
   },
 
-  didInsertElement() {
-    this._super(...arguments);
+  initPlayer() {
+    let element = this.$().find('video').get(0);
+    let player = videojs(element);
 
-    const element = this.$().find("video").get(0);
-    const player = videojs(element);
-
-    if ( this.get("height") ) {
-      player.height(this.get("height"));
+    if ( this.get('height') ) {
+      player.height(this.get('height'));
     }
 
-    if ( this.get("width") ) {
-      player.width(this.get("width"));
+    if ( this.get('width') ) {
+      player.width(this.get('width'));
     }
 
-    if ( this.get("fluid") ) {
-      player.fluid(this.get("fluid"));
+    if ( this.get('fluid') ) {
+      player.fluid(this.get('fluid'));
     }
 
     // Register plugins
     // Get global plugins from config.
-    if ( this.get("vr-projection") ) {
-      if ( typeof player.vr === "function" ) {
-        this.set("vr-crossorigin", "anonymous");
-        player.vr({projection: this.get("vr-projection")});
+    if ( this.get('vr-projection') ) {
+      if ( typeof player.vr === 'function' ) {
+        this.set('vr-crossorigin', 'anonymous');
+        player.vr({projection: this.get('vr-projection')});
       } else {
         console.error("It looks like you are trying to play a VR video without the videojs-vr library. Please `npm install --save-dev videojs-vr` and add `app.import('node_modules/videojs-vr/dist/videojs-vr.min.js');` to your ember-cli-build.js file.");
       }
@@ -109,7 +107,7 @@ export default Component.extend({
       });
 
       // Set up event listeners defined in `playerEvents`.
-      const playerEvents = this.get('playerEvents');
+      let playerEvents = this.get('playerEvents');
       if (playerEvents) {
         for (let key in playerEvents) {
           if (!playerEvents.hasOwnProperty(key)) { continue; }
@@ -121,7 +119,31 @@ export default Component.extend({
       this.sendAction('ready', player, this);
     });
 
-    this.set("player", player);
+    this.set('player', player);
+  },
+
+  updatePlayer() {
+    let element = this.$().find('video').get(0);
+    let player = videojs(element);
+
+    let source = this.get('src');
+    let type = this.get('type');
+
+    player.pause();
+    player.src(source);
+    player.load();
+  },
+
+  didRender() {
+    this._super(...arguments);
+
+    let player = this.get('player');
+
+    if (player) {
+      this.updatePlayer();
+    } else {
+      this.initPlayer();
+    }
   },
 
 
