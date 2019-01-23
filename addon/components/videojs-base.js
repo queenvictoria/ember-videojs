@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import {computed} from '@ember/object';
 import layout from '../templates/components/videojs-base';
 import videojs from 'videojs';
 
@@ -14,6 +15,11 @@ export default Component.extend({
   loop: false,
   height: null,
   width: null,
+  muted: false,
+
+  dataSetup: computed("muted", "loop", "controls", "autoplay", function(){
+    return JSON.stringify(this.getProperties("muted", "loop", "controls", "autoplay"));
+  }),
 
   /**
    * The set of video.js player events (and associated actions) to be set up
