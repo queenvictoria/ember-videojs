@@ -16,6 +16,7 @@ export default Component.extend({
   height: null,
   width: null,
   muted: false,
+  playsinline:true,
 
   dataSetup: computed("muted", "loop", "controls", "autoplay", function(){
     return JSON.stringify(this.getProperties("muted", "loop", "controls", "autoplay"));
