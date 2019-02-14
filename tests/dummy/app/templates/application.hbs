@@ -1,5 +1,14 @@
 <h2 id="title">VideoJS Player component</h2>
 
+<h3 id="title">Youtube Video</h3>
+
+{{videojs-player
+  src="https://www.youtube.com/watch?v=3WQHDUYk310"
+  type="video/youtube"
+  timeupdate="timeupdate"
+}}
+
+
 <h3 id="title">No controls video</h3>
 
 {{videojs-player
@@ -10,6 +19,7 @@
   action="togglePlay"
   ready="ready"
   progress="progress"
+  timeupdate="timeupdate"
   click="togglePlay"
 }}
 

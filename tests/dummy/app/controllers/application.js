@@ -26,6 +26,10 @@ export default Controller.extend({
         player.pause();
       }
     },
+
+    timeupdate(player) {
+      console.log('Log - timeupdate', player.currentTime());
+    },
   }
 
 });
