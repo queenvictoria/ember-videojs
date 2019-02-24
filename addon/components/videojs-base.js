@@ -12,7 +12,7 @@ export default Component.extend({
   controls: true,
   fluid: false,
   loop: false,
-  mute: false,
+  muted: false,
   height: null,
   width: null,
 
