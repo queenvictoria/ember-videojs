@@ -93,7 +93,7 @@ export default Component.extend({
     // Get global plugins from config.
     if ( this.get('vr-projection') ) {
       if ( typeof player.vr === 'function' ) {
-        this.set('vr-crossorigin', 'anonymous');
+        this.set('crossorigin', 'anonymous');
         player.vr({projection: this.get('vr-projection')});
       } else {
         console.error("It looks like you are trying to play a VR video without the videojs-vr library. Please `npm install --save-dev videojs-vr` and add `app.import('node_modules/videojs-vr/dist/videojs-vr.min.js');` to your ember-cli-build.js file.");
