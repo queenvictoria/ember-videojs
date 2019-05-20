@@ -1,6 +1,6 @@
 {
   "name": "ember-videojs",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Use VideoJS components in your Ember project.",
   "keywords": [
     "ember-addon",
