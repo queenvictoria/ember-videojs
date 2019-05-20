@@ -55,6 +55,16 @@ this.set("sources", [
 {{video-js controls=true}}
 ```
 
+### Plays inline
+
+[Plays inline](https://webkit.org/blog/6784/new-video-policies-for-ios/) for mobile Safari.
+
+- `playsinline`: true\|false
+
+```handlebars
+{{video-js playsinline=true}}
+```
+
 #### Click to play without controls
 
 ```handlebars
