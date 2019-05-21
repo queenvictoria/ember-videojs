@@ -15,6 +15,7 @@ export default Component.extend({
   muted: false,
   height: null,
   width: null,
+  html5: {},
 
   /**
    * The set of video.js player events (and associated actions) to be set up
@@ -75,7 +76,7 @@ export default Component.extend({
 
   initPlayer() {
     let element = this.$().find('video').get(0);
-    let player = videojs(element);
+    let player = videojs(element, { html5: this.get('html5') });
 
     if ( this.get('height') ) {
       player.height(this.get('height'));
