@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import EmberError from '@ember/error';
 import layout from '../templates/components/videojs-base';
 import videojs from 'videojs';
 
@@ -15,7 +16,8 @@ export default Component.extend({
   muted: false,
   height: null,
   width: null,
-  html5: {},
+  html5: null,
+  playerEvents: null,
 
   /**
    * The set of video.js player events (and associated actions) to be set up
@@ -42,41 +44,45 @@ export default Component.extend({
    * @type Object
    * @private
    */
-  playerEvents: {
-    abort: 'abort',
-    canplay: 'canplay',
-    canplaythrough: 'canplaythrough',
-    durationchange: 'durationchange',
-    emptied: 'emptied',
-    ended: 'ended',
-    error: 'error',
-    loadeddata: 'loadeddata',
-    loadedmetadata: 'loadedmetadata',
-    loadstart: 'loadstart',
-    pause: 'pause',
-    play: 'play',
-    playing: 'playing',
-    progress: 'progress',
-    ratechange: 'ratechange',
-    resize: 'resize',
-    seeked: 'seeked',
-    seeking: 'seeking',
-    stalled: 'stalled',
-    suspend: 'suspend',
-    timeupdate: 'timeupdate',
-    useractive: 'useractive',
-    userinactive: 'userinactive',
-    volumechange: 'volumechange',
-    waiting: 'waiting',
+  init() {
+    this._super(...arguments);
 
-    // @queenvictoria added
-    click: 'click',
-    tap: 'tap',
+    this.playerEvents = {
+      abort: 'abort',
+      canplay: 'canplay',
+      canplaythrough: 'canplaythrough',
+      durationchange: 'durationchange',
+      emptied: 'emptied',
+      ended: 'ended',
+      error: 'error',
+      loadeddata: 'loadeddata',
+      loadedmetadata: 'loadedmetadata',
+      loadstart: 'loadstart',
+      pause: 'pause',
+      play: 'play',
+      playing: 'playing',
+      progress: 'progress',
+      ratechange: 'ratechange',
+      resize: 'resize',
+      seeked: 'seeked',
+      seeking: 'seeking',
+      stalled: 'stalled',
+      suspend: 'suspend',
+      timeupdate: 'timeupdate',
+      useractive: 'useractive',
+      userinactive: 'userinactive',
+      volumechange: 'volumechange',
+      waiting: 'waiting',
+
+      // @queenvictoria added
+      click: 'click',
+      tap: 'tap',
+    };
   },
 
   initPlayer() {
     let element = this.$().find('video').get(0);
-    let player = videojs(element, { html5: this.get('html5') });
+    let player = videojs(element, { html5: this.get('html5') || {} });
 
     if ( this.get('height') ) {
       player.height(this.get('height'));
@@ -97,7 +103,7 @@ export default Component.extend({
         this.set('crossorigin', 'anonymous');
         player.vr({projection: this.get('vr-projection')});
       } else {
-        console.error("It looks like you are trying to play a VR video without the videojs-vr library. Please `npm install --save-dev videojs-vr` and add `app.import('node_modules/videojs-vr/dist/videojs-vr.min.js');` to your ember-cli-build.js file.");
+        throw new EmberError("It looks like you are trying to play a VR video without the videojs-vr library. Please `npm install --save-dev videojs-vr` and add `app.import('node_modules/videojs-vr/dist/videojs-vr.min.js');` to your ember-cli-build.js file.");
       }
     }
 
@@ -129,7 +135,6 @@ export default Component.extend({
     let player = videojs(element);
 
     let source = this.get('src');
-    let type = this.get('type');
 
     player.pause();
     player.src(source);

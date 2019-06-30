@@ -11,12 +11,12 @@ export default Controller.extend({
   },
 
   actions: {
-    progress: function(e) {
-      console.log("progress");
+    progress: function(/*e*/) {
+      return;
     },
 
     ready: function() {
-      console.log("ready");
+      return;
     },
 
     togglePlay: function(player) {
