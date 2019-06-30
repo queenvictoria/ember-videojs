@@ -14,29 +14,32 @@
 }}
 
 Click video to play or pause
-<pre><code>
-  // app/templates/components/player.hbs
-  &lbrace;&lbrace;videojs-player
-    sources=sources
-    poster="https://vjs.zencdn.net/v/oceans.png"
-    controls=false
-    autoplay=false
-    click="togglePlay"
-  &rbrace;&rbrace;
-</code></pre>
+<pre>
+  <code>
+    // app/templates/components/player.hbs
+    &lbrace;&lbrace;videojs-player
+      sources=sources
+      poster="https://vjs.zencdn.net/v/oceans.png"
+      controls=false
+      autoplay=false
+      click="togglePlay"
+    &rbrace;&rbrace;
+  </code>
+</pre>
 
-<pre><code>
-  // app/components/player.js
-  actions: {
-    togglePlay: function(player) {
-      if (player.paused()) {
-        player.play();
-      } else {
-        player.pause();
+<pre>
+  <code>
+    // app/components/player.js
+    actions: {
+      togglePlay: function(player) {
+        if (player.paused()) {
+          player.play();
+        } else {
+          player.pause();
+        }
       }
     }
-  }
-</code>
+  </code>
 </pre>
 <h3 id="title">Normal video</h3>
 

@@ -1,21 +1,21 @@
-<video class="video-js" autoplay={{autoplay}} controls={{controls}} loop={{loop}} muted={{muted}} playsinline={{playsinline}} preload="auto" poster="{{poster}}" data-setup="{}" crossorigin="{{crossorigin}}" tabindex="0">
+<video class="video-js" autoplay={{autoplay}} controls={{controls}} loop={{loop}} muted={{muted}} playsinline={{playsinline}} preload="auto" poster={{poster}} data-setup="{}" crossorigin={{crossorigin}} tabindex="0">
   {{#if src}}
-    <source src="{{src}}" type="{{type}}">
+    <source src={{src}} type={{type}}>
   {{/if}}
 
   {{#if sources}}
-    {{#each sources as |source|}}
-      <source src="{{source.src}}" type="{{source.type}}">
+    {{#each sources as |item|}}
+      <source src={{item.src}} type={{item.type}}>
     {{/each}}
   {{/if}}
 
   {{#if textTrack}}
-    <track kind="captions" src="{{textTrack}}" srclang="en" label="English" type="text/vtt" default>
+    <track kind="captions" src={{textTrack}} srclang="en" label="English" type="text/vtt" default>
   {{/if}}
 
   {{#if textTracks}}
     {{#each textTracks as |textTrack|}}
-      <track kind="{{textTrack.kind}}" src="{{textTrack.src}}" srclang="{{textTrack.language}}" label="{{textTrack.label}}" type="{{textTrack.type}}" default>
+      <track kind={{textTrack.kind}} src={{textTrack.src}} srclang={{textTrack.language}} label={{textTrack.label}} type={{textTrack.type}} default>
     {{/each}}
   {{/if}}
 
