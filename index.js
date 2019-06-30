@@ -5,7 +5,7 @@ const MergeTrees = require('broccoli-merge-trees');
 const path = require('path');
 
 module.exports = {
-  name: 'ember-videojs',
+  name: require('./package').name
 
   // https://github.com/IvyApp/ivy-videojs/blob/master/index.js
   included(app) {
