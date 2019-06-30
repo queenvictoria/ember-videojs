@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 import EmberError from '@ember/error';
+import jQuery from 'jquery';
 import layout from '../templates/components/videojs-base';
 import videojs from 'videojs';
 
@@ -81,7 +82,7 @@ export default Component.extend({
   },
 
   initPlayer() {
-    let element = this.$().find('video').get(0);
+    let element = jQuery().find('video').get(0);
     let player = videojs(element, { html5: this.get('html5') || {} });
 
     if ( this.get('height') ) {
@@ -131,7 +132,7 @@ export default Component.extend({
   },
 
   updatePlayer() {
-    let element = this.$().find('video').get(0);
+    let element = jQuery().find('video').get(0);
     let player = videojs(element);
 
     let source = this.get('src');
