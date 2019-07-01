@@ -78,7 +78,7 @@ this.set("sources", [
 
 ```handlebars
 {{!-- app/templates/components/player.hbs}}
-{{video-js controls=false click="togglePlay"}}
+{{video-js controls=false click=(action "togglePlay")}}
 ```
 
 ``` javascript
