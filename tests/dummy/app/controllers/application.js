@@ -11,7 +11,8 @@ export default Controller.extend({
   },
 
   actions: {
-    progress: function(/*e*/) {
+
+    play: function() {
       return;
     },
 
@@ -19,7 +20,14 @@ export default Controller.extend({
       return;
     },
 
+    timeupdate: function(player/*, self, args*/) {
+      console.log('Time update: ' + Math.round(player.currentTime()/player.duration()*100) + '%');
+    },
+
     togglePlay: function(player) {
+      if ( ! player || typeof player.paused !== 'function' )
+        return
+
       if (player.paused()) {
         player.play();
       } else {

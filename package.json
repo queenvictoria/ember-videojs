@@ -32,7 +32,7 @@
   "dependencies": {
     "ember-cli-babel": "^7.7.3",
     "ember-cli-htmlbars": "^3.0.1",
-    "video.js": "^7.2.4"
+    "video.js": "^7.5.5"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.7.0",

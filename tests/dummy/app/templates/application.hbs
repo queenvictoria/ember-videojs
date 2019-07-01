@@ -7,10 +7,10 @@
   poster="https://vjs.zencdn.net/v/oceans.png"
   controls=false
   autoplay=false
-  action="togglePlay"
-  ready="ready"
-  progress="progress"
-  click="togglePlay"
+  play=(action "play")
+  ready=(action "ready")
+  timeupdate=(action "timeupdate")
+  click=(action "togglePlay")
 }}
 
 Click video to play or pause
@@ -22,7 +22,8 @@ Click video to play or pause
       poster="https://vjs.zencdn.net/v/oceans.png"
       controls=false
       autoplay=false
-      click="togglePlay"
+      play=(action "play")
+      click=(action "togglePlay")
     &rbrace;&rbrace;
   </code>
 </pre>
@@ -31,6 +32,9 @@ Click video to play or pause
   <code>
     // app/components/player.js
     actions: {
+      play: function() {
+        console.log('Play');
+      },
       togglePlay: function(player) {
         if (player.paused()) {
           player.play();

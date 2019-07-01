@@ -82,7 +82,9 @@ export default Component.extend({
   },
 
   initPlayer() {
-    let element = jQuery().find('video').get(0);
+    const self = this;
+
+    let element = jQuery(this.element).find('video').get(0);
     let player = videojs(element, { html5: this.get('html5') || {} });
 
     if ( this.get('height') ) {
@@ -125,14 +127,16 @@ export default Component.extend({
       }
 
       // Let the outside world know that we're ready.
-      this.sendAction('ready', player, this);
+      if ( self.ready && typeof self.ready === 'function' ) {
+        self.ready(player, this);
+      }
     });
 
     this.set('player', player);
   },
 
   updatePlayer() {
-    let element = jQuery().find('video').get(0);
+    let element = jQuery(this.element).find('video').get(0);
     let player = videojs(element);
 
     let source = this.get('src');
@@ -164,8 +168,12 @@ export default Component.extend({
    * @param {String} playerEvent the player event name to listen for
    */
   sendActionOnPlayerEvent(player, action, playerEvent=action) {
+    const self = this;
+
     const listenerFunction = (...args) => {
-      this.sendAction(action, player, this, ...args);
+      if ( self[action] ) {
+        self[action](player, this, ...args);
+      }
     };
 
     this._onPlayerEvent(player, playerEvent, listenerFunction);
