@@ -30,7 +30,7 @@ Usage
 ### Add multiple sources.
 
 ```handlebars
-{{video-js sources=sources}}
+{{videojs-player sources=sources}}
 ```
 
 ```javascript
@@ -53,7 +53,7 @@ this.set("sources", [
 - `autoplay`: true\|false
 
 ```handlebars
-{{video-js autoplay=true}}
+{{videojs-player autoplay=true}}
 ```
 
 ### Controls
@@ -61,7 +61,7 @@ this.set("sources", [
 - `controls`: true\|false
 
 ```handlebars
-{{video-js controls=true}}
+{{videojs-player controls=true}}
 ```
 
 ### Plays inline
@@ -71,14 +71,14 @@ this.set("sources", [
 - `playsinline`: true\|false
 
 ```handlebars
-{{video-js playsinline=true}}
+{{videojs-player playsinline=true}}
 ```
 
 #### Click to play without controls
 
 ```handlebars
 {{!-- app/templates/components/player.hbs}}
-{{video-js controls=false click=(action "togglePlay")}}
+{{videojs-player controls=false click=(action "togglePlay")}}
 ```
 
 ``` javascript
@@ -102,8 +102,8 @@ actions: {
 - `fluid`: adds the .vjs-fluid class and will scale to fit the container and content.
 
 ```handlebars
-{{video-js width=640 height=320}}
-{{video-js fluid=true}}
+{{videojs-player width=640 height=320}}
+{{videojs-player fluid=true}}
 ```
 
 ### 360 videos and VR
@@ -124,7 +124,7 @@ Add the [vr-projection](https://github.com/videojs/videojs-vr#projection) attrib
 - `vr-projection`: '360', 'Sphere', or 'equirectangular'
 
 ```handlebars
-{{video-js vrProjection="360"}}
+{{videojs-player vrProjection="360"}}
 ```
 
 ### Skinning
@@ -172,13 +172,13 @@ Add a text track to your video in the `WebVTT` format.
 - `textTrack`: [track URL]
 
 ```handlebars
-{{video-js textTrack="captions-mi.vtt"}}
+{{videojs-player textTrack="captions-mi.vtt"}}
 ```
 
 Add multiple tracks or configure the text track options in your component.
 
 ```handlebars
-{{video-js textTracks=textTracks}}
+{{videojs-player textTracks=textTracks}}
 ```
 
 ```javascript
