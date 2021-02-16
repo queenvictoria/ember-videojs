@@ -106,6 +106,14 @@ actions: {
 {{videojs-player fluid=true}}
 ```
 
+### AspectRatio 
+
+- `aspectRatio`: This option is in the form of two integers separated by a colon like so 16:9 or 4:3
+
+```handlebars
+{{videojs-player aspectRatio='16:9'}}
+```
+
 ### 360 videos and VR
 
 Install the [videojs-vr](https://github.com/videojs/videojs-vr#installation) plugin
