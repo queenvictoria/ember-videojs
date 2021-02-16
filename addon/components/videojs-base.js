@@ -98,6 +98,11 @@ export default Component.extend({
     if ( this.get('fluid') ) {
       player.fluid(this.get('fluid'));
     }
+    
+    
+    if ( this.get('aspectRatio') ) {
+      player.aspectRatio(this.get('aspectRatio'));
+    }
 
     // Register plugins
     // Get global plugins from config.
