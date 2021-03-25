@@ -83,9 +83,16 @@ export default Component.extend({
 
   initPlayer() {
     const self = this;
+    const playerOptions = {};
+    playerOptions.html5 = this.get('html5') || {};
+
+    if(this.get('liveui')){
+      playerOptions.liveui = true;
+    }
+
 
     let element = jQuery(this.element).find('video').get(0);
-    let player = videojs(element, { html5: this.get('html5') || {} });
+    let player = videojs(element, playerOptions);
 
     if ( this.get('height') ) {
       player.height(this.get('height'));
