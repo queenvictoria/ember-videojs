@@ -114,6 +114,14 @@ actions: {
 {{videojs-player aspectRatio='16:9'}}
 ```
 
+### LiveUI
+
+- `liveui`: This option is a boolean 
+
+```handlebars
+{{videojs-player liveui=true}}
+```
+
 ### 360 videos and VR
 
 Install the [videojs-vr](https://github.com/videojs/videojs-vr#installation) plugin
