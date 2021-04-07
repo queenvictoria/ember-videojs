@@ -106,6 +106,26 @@ actions: {
 {{videojs-player fluid=true}}
 ```
 
+### AspectRatio 
+
+- `aspectRatio`: This option is in the form of two integers separated by a colon: for example `16:9` or `4:3`.
+
+```handlebars
+{{videojs-player aspectRatio='16:9'}}
+```
+
+### LiveUI
+
+Use new Live UI for live streams.
+
+- `liveui`: This option is a boolean 
+
+```handlebars
+{{videojs-player liveui=true}}
+```
+
+For more details please read official documentation https://docs.videojs.com/tutorial-live.html
+
 ### 360 videos and VR
 
 Install the [videojs-vr](https://github.com/videojs/videojs-vr#installation) plugin
