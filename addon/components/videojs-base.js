@@ -90,7 +90,6 @@ export default Component.extend({
       playerOptions.liveui = true;
     }
 
-
     let element = jQuery(this.element).find('video').get(0);
     let player = videojs(element, playerOptions);
 
@@ -105,8 +104,7 @@ export default Component.extend({
     if ( this.get('fluid') ) {
       player.fluid(this.get('fluid'));
     }
-    
-    
+        
     if ( this.get('aspectRatio') ) {
       player.aspectRatio(this.get('aspectRatio'));
     }
